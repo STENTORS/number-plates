@@ -1,3 +1,5 @@
+import os
+
 regionalPrefixSystem = False #1904 – 1932
 threeLetterRegionalPrefix = False #1933 – 1950
 flippedThreeLetterRegionalPrefix = False #1951 – 1962
@@ -21,7 +23,17 @@ def alphabet(startRange, rangeCheck):
 def year(licence):
     numberOfAlpha = 0
     global count
+    global regionalPrefixSystem
+    global threeLetterRegionalPrefix
+    global flippedThreeLetterRegionalPrefix
+    global suffixSystem
+    global prefixSystem
+    global currentSystem
     count = [x for x in licence]
+
+    print("_________")
+    print("|", licence,"|")
+    print("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
 
     if len(count) == 6:
         #print(6, "alphabetical charachter(s)")
@@ -36,6 +48,14 @@ def year(licence):
         elif alphabet(0,2) == 0 and alphabet(3,5) == 2:
             flippedThreeLetterRegionalPrefix = True
             print("flippedThreeLetterRegionalPrefix 1951 – 1962")
+
+        #example of details from MOT checker
+        elif licence == "A14EMC" or licence == "a14emc":
+            print("Vehicle make: TOYOTA\nDate of first registration: March 2008\nYear of manufacture: 2008")
+            print("Cylinder capacity: 1497 cc\nCO₂ emissions: 104 g/km\nFuel type: HYBRID ELECTRIC")
+            print("Vehicle status: Taxed\nVehicle colour: SILVER\nVehicle type approval: M1")
+            print("Wheelplan: 2 AXLE RIGID BODY\nDate of last V5C (logbook) issued: 1 June 2020")
+            
         else:
             print("Custom Licence")
 
@@ -48,25 +68,66 @@ def year(licence):
         elif alphabet(0,2) == 0 and alphabet(3,6) == 3:
             print("Prefix System 1983 to 2000")
             prefixSystem = True
+            
+        elif count[3] == "D" or count[3] =="X" or count[3] == "d" or count[3] == "d" and alphabet(4,6) == 0:
+            diplomatOne = int(count[0] + count[1] + count[2])
+            diplomatTwo = int(count[4] + count[5] + count[6])
+
+            print(diplomatOne)
+            print(diplomatTwo)
+
+            if diplomatTwo >= 101:
+                print("Diplomat acording to the 101 - 399")
+            elif diplomatTwo >= 400:
+                print("non-diplomatic staff of international organisations")
+            elif diplomatTwo >= 700:
+                print("consular or other non-diplomatic staff")
+
+                
+            if diplomatOne == 101:
+                print("Afghanistan (Islamic Republic")
+            
+            if count[3] =="D" or "d":
+                print("diplomats")
+            else:
+                print("Non-diplomatic accredited personnel")
+            
+            
         #modern AB 12 CDE
-        if alphabet(0,2) == 2 and alphabet(2,3) == 0 and alphabet(4,6) == 2:
+        elif alphabet(0,2) == 2 and alphabet(2,3) == 0 and alphabet(4,6) == 2:
+            currentSystem = True
             print("Current")
+
         else:
             print("Custom Licence")
             
-
 while True:
-    inVal = input("\nLicence Number UK (no Space): ")
-    if len(inVal) <= 8:
-        print("Processesing Licence...\n")
-        break
-    else:
-        print("Invalid Licence or possibly a custom one")
-year(inVal)
+    while True:
+        inVal = input("\nLicence Number UK (no Space): ")
+        if len(inVal) <= 8:
+            print("Processesing Licence...\n")
+            break
+        else:
+            print("Invalid Licence or possibly a custom one")
 
-#https://www.belinus.co.uk/uk-number-plates.php
-#https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_the_United_Kingdom
-#https://vehicleenquiry.service.gov.uk/?locale=en
-#https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_the_United_Kingdom#Registration_plate_styles
-#https://www.newreg.co.uk/dvla-number-plate-identifiers/
-#https://realpython.com/python-gui-tkinter/
+    year(inVal)
+    
+
+    #calculate the year
+    if (currentSystem):
+        yearOne = count[2]
+        yearTwo = count[3]
+        yearOne = int(yearOne)
+        
+        if yearOne > 5:
+            yearOne = yearOne - 5
+            print("Second half of:")
+        else:
+            print("First half of:")
+        yearOne = str(yearOne)
+        
+        year = "20"+yearOne+yearTwo
+        print("year", year)
+
+#A14EMC
+

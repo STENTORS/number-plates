@@ -39,9 +39,4 @@ if licence:
     print(userIn)
 licence.pack()
 
-
-#https://vehicleenquiry.service.gov.uk/?locale=en
-#https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_the_United_Kingdom#Registration_plate_styles
-#https://www.newreg.co.uk/dvla-number-plate-identifiers/
-#https://realpython.com/python-gui-tkinter/
 root.mainloop()

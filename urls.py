@@ -1,6 +1,6 @@
 import webbrowser
 import time
-
+#used to open all of the needed resources
 urls = [
     "https://www.belinus.co.uk/uk-number-plates.php",
     "https://www.belinus.co.uk/plates-format-history.php",

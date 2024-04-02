@@ -48,9 +48,10 @@ def year(licence):
         elif alphabet(0,2) == 0 and alphabet(3,5) == 2:
             flippedThreeLetterRegionalPrefix = True
             print("flippedThreeLetterRegionalPrefix 1951 – 1962")
-
-        #example of details from MOT checker
+            
         elif licence == "A14EMC" or licence == "a14emc":
+            print("Asher's Gandads car\nCustom")
+            
             print("Vehicle make: TOYOTA\nDate of first registration: March 2008\nYear of manufacture: 2008")
             print("Cylinder capacity: 1497 cc\nCO₂ emissions: 104 g/km\nFuel type: HYBRID ELECTRIC")
             print("Vehicle status: Taxed\nVehicle colour: SILVER\nVehicle type approval: M1")

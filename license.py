@@ -1,12 +1,12 @@
 import os
 
 #? = contridicting sourses 
-regionalPrefixSystem = False #1904 – 1932 --------------AB 1234
-threeLetterRegionalPrefix = False #1933 – 1950----------ABC 123
-flippedThreeLetterRegionalPrefix = False #1951 – 1962---123 ABC
-suffixSystem = False #1963 – 1982-----------------------ABC 123 D
-prefixSystem = False #1983 – 2000-----------------------A 123 BCD
-currentSystem = False #2001 – current ------------------AB 12 CDE
+regionalPrefixSystem = False #1904 – 1932 -------------------------AB 1234
+threeLetterRegionalPrefix = False #1933 – 1950------------------ABC 123
+flippedThreeLetterRegionalPrefix = False #1951 – 1962------123 ABC
+suffixSystem = False #1963 – 1982-------------------------------------ABC 123 D
+prefixSystem = False #1983 – 2000-------------------------------------A 123 BCD
+currentSystem = False #2001 – current -------------------------------AB 12 CDE
 
 count = []
 def diplomatLocation(locationCode):
@@ -525,7 +525,7 @@ def year(licence):
             print("flippedThreeLetterRegionalPrefix 1951 – 1962")
             
         elif licence == "A14EMC" or licence == "a14emc":
-            print("EXAMPLE MOT CHECKER DATA\nCustom")
+            print("Asher's Gandads car\nCustom")
             
             print("Vehicle make: TOYOTA\nDate of first registration: March 2008\nYear of manufacture: 2008")
             print("Cylinder capacity: 1497 cc\nCO₂ emissions: 104 g/km\nFuel type: HYBRID ELECTRIC")
@@ -611,3 +611,4 @@ while True:
         print("DVLA Office:", office)
 
 #A14EMC
+

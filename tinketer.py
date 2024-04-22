@@ -6,7 +6,7 @@ root = tk.Tk()
 box = tk.Frame()
 
 greeting = tk.Label(
-    text="Hello, World",
+    text="Enter Plate",
     fg="white",
     bg = "black",
     height=2,

@@ -1,12 +1,12 @@
-import os
+#import os
 
 #? = contridicting sourses 
-regionalPrefixSystem = False #1904 – 1932 -------------------------AB 1234
-threeLetterRegionalPrefix = False #1933 – 1950------------------ABC 123
-flippedThreeLetterRegionalPrefix = False #1951 – 1962------123 ABC
-suffixSystem = False #1963 – 1982-------------------------------------ABC 123 D
-prefixSystem = False #1983 – 2000-------------------------------------A 123 BCD
-currentSystem = False #2001 – current -------------------------------AB 12 CDE
+#regionalPrefixSystem = False #1904 – 1932 -------------------------AB 1234
+#threeLetterRegionalPrefix = False #1933 – 1950------------------ABC 123
+#flippedThreeLetterRegionalPrefix = False #1951 – 1962------123 ABC
+#suffixSystem = False #1963 – 1982-------------------------------------ABC 123 D
+#prefixSystem = False #1983 – 2000-------------------------------------A 123 BCD
+#currentSystem = False #2001 – current -------------------------------AB 12 CDE
 
 count = []
 def diplomatLocation(locationCode):
@@ -508,7 +508,7 @@ def year(licence):
 
     print("_________")
     print("|", licence,"|")
-    print("‾‾‾‾‾‾‾‾‾")
+    print("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
 
     if len(count) == 6:
         #print(6, "alphabetical charachter(s)")
@@ -574,10 +574,27 @@ def year(licence):
             print("Current")
 
         else:
-            print("Custom Licence")
-            
+            if count[0] == "L" or count[0] == "L" and count[1] == "t" or count[1] == "T" and count[2] == "z" or count[2] == "Z":
+                if alphabet(3,7) == 0:
+                    print("UK Bus \n new Routemaster \n built in the Northern Irish town of Ballymena registered at the factory")
+                    print("registration number LTZ = LT class\nThe number plates dictate their fleet number")
+                else:
+                    print("Custom Licence")
+            else:
+                print("Custom Licence")
+
 while True:
+    
     while True:
+        #? = contridicting sourses 
+        regionalPrefixSystem = False #1904 – 1932 -------------------------AB 1234
+        threeLetterRegionalPrefix = False #1933 – 1950------------------ABC 123
+        flippedThreeLetterRegionalPrefix = False #1951 – 1962------123 ABC
+        suffixSystem = False #1963 – 1982-------------------------------------ABC 123 D
+        prefixSystem = False #1983 – 2000-------------------------------------A 123 BCD
+        currentSystem = False #2001 – current -------------------------------AB 12 CDE
+
+        count = []
         inVal = input("\nLicence Number UK (no Space): ")
         if len(inVal) <= 8:
             print("Processesing Licence...\n")
@@ -600,9 +617,9 @@ while True:
         else:
             print("First half of:")
         yearOne = str(yearOne)
-        
-        year = "20"+yearOne+yearTwo
-        print("year", year)
+            
+        yearOut = "20"+yearOne+yearTwo
+        print("year", yearOut)
 
         #Local memory tag check
         location = count[0] + count[1]
